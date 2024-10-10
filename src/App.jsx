@@ -37,10 +37,14 @@ function App() {
           onSelect={setPercentage2}
           text={"How did your friend like the service?"}
         />
-        <Total bill={bill} tip={tip} />
-        <Reset Ui="button" functions={handleReset}>
-          Reset
-        </Reset>
+        {bill > 0 && (
+          <>
+            <Total bill={bill} tip={tip} />
+            <Reset Ui="button" functions={handleReset}>
+              Reset
+            </Reset>
+          </>
+        )}
       </div>
     </>
   );
